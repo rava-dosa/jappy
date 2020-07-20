@@ -1,6 +1,7 @@
 from vocab import *
 import sys
 from fuzzywuzzy import process
+from random import choice
 #gs=1, search words
 #gs=2, practice nouns
 #gs=3, practice verbs
@@ -20,9 +21,11 @@ def take_input():
         input_str=input()
         if(input_str.startswith("..")):
             gs=take_control(input_str,gs)
-            continue
+            if(gs==0 or gs==1):
+                continue            
         output=get_output(input_str,gs)
         gs=output["gs"]
+        print(output["output"])
 
 def take_control(input_str,gs):
     # r for reset
@@ -37,7 +40,37 @@ def take_control(input_str,gs):
 def get_output(input_str,gs):
     if(gs==1):
         output=getsearch(input_str)
-    return({"gs":1,"output":output})
+        return({"gs":1,"output":output})
+    if(gs==2):
+        output=getnextword(input_str)
+        return({"gs":2,"output":output})
+
+def getnextword(input_str):
+    error={}
+    noun=all_vocab[0]
+    noun_keys=list(noun.keys())
+    print(noun_keys)
+    keyx=input("What do you want to practice: ")
+    if(keyx in noun_keys):
+        l=noun[keyx]
+        for x in l:
+            comp=input("{}-->  ".format(x[1]))
+            if(comp==x[0]):
+                print("correct")
+            else:
+                print("wrong, correct answer is {} ".format(x[0]))
+                error[x[1]]=x[0]
+        while(len(list(error.keys()))!=0):
+            temp=choice(list(error.keys()))
+            comp=input("{}-->  ".format(temp))
+            if(comp==error[temp]):
+                print("correct")
+                error.pop(temp)
+            else:
+                print("wrong")
+
+
+
 
 def getsearch(input_str):
     all_str=[]
@@ -72,7 +105,6 @@ def getsearch(input_str):
         temp1=x[temp][0]
         temp2=(temp,temp1)
         all_str.append(temp2)
-    # print(all_str)
     all_strx=[]
     for x in all_str:
         if(len(x)>=2):
@@ -87,9 +119,8 @@ def getsearch(input_str):
         for z in temp_l:
             if(len(x)>=2):
                 if(x[0]==z or x[1]==z):
-                    print(x)
                     ret.append(x)
-    # print(ret)
+
     return ret
 if __name__ == "__main__": 
     take_input()

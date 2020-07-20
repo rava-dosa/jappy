@@ -47,7 +47,7 @@ places=[
     ("toshokan","library"),("yuubinkyoku","post office"),("ie","home"),("uchi","my home"),("gakkou","school")
 ]
 fun=[
-    ("eiga","movie"),("ongaku","music"),("zasshi","magazine"),("supaatsu","sports"),
+    ("eiga","movie"),("ongaku","music"),("jasshi","magazine"),("supaatsu","sports"),
     ("deto","date"),("tenisu","tennis"),("terubi","television")
 ]
 food1=[
@@ -81,7 +81,7 @@ adjna=[
     ("daikirai","very hate"),("daisuki","very fond/very love"),("nigiyaka","lively"),("hima","not busy")
 ]
 negativeAdv=[
-    ("amari","not much"),("zenzen","not at all")
+    ("amari","not much"),("jenjen","not at all")
 ]
 positiveAdv=[
     ("taitei","usually"),("chotto","little"),("tokidoki","sometimes"),
