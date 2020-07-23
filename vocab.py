@@ -120,7 +120,7 @@ etc=[
     ("takusan","a lot"),("demo","but"),("goro","around"),("gurai","approximate"),("hitoride","alone"),
     ("isshoni","together"),("sugoku","extremely"),("sorekara","and then"),("daijoubu","it's okay"),
     ("totemo","very"),("donna","what kind of"),("atode","later on"),("osoku","do something late"),("kara","because"),
-    ("kekkoudesu","that's not necessary"),("sugu","right away"),("hontoudesuka","Really?"),("yukkuri","slowly")
+    ("kekkoudesu","that's not necessary"),("sugu","right away"),("hontoudesuka","Really?"),("yukkuri","slowly"),("kyoudai","brother")
     ]
 # pdb.set_trace()
 verbs = {

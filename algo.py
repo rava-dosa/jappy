@@ -44,6 +44,12 @@ def get_output(input_str,gs):
     elif(gs==2):
         output=getnextword(input_str)
         return({"gs":2,"output":output})
+    elif(gs==5):
+        output=getnextadj(input_str)
+        return({"gs":5,"output":output})
+    elif(gs==3):
+        output=getnextverb(input_str)
+        return({"gs":3,"output":output})
     else:
         return({"gs":0,"output":"Please enter valid command"})
 
@@ -60,7 +66,7 @@ def getnextword(input_str):
             if(comp==x[0]):
                 print("correct")
             else:
-                print("wrong, correct answer is {} ".format(x[0]))
+                print("wrong, correct answer is \033[00m {}-->{} \033[00m".format(x[1],x[0]))
                 error[x[1]]=x[0]
         while(len(list(error.keys()))!=0):
             temp=choice(list(error.keys()))
@@ -74,18 +80,18 @@ def getnextword(input_str):
 
 def getnextadj(input_str):
     error={}
-    noun=all_vocab[0]
-    noun_keys=list(noun.keys())
-    print(noun_keys)
+    adj=all_vocab[1]
+    adj_keys=list(adj.keys())
+    print(adj_keys)
     keyx=input("What do you want to practice: ")
-    if(keyx in noun_keys):
-        l=noun[keyx]
+    if(keyx in adj_keys):
+        l=adj[keyx]
         for x in l:
             comp=input("{}-->  ".format(x[1]))
             if(comp==x[0]):
                 print("correct")
             else:
-                print("wrong, correct answer is {} ".format(x[0]))
+                print("wrong, correct answer is \033[92m {}-->{} \033[00m".format(x[1],x[0]))
                 error[x[1]]=x[0]
         while(len(list(error.keys()))!=0):
             temp=choice(list(error.keys()))
@@ -96,6 +102,30 @@ def getnextadj(input_str):
             else:
                 print("wrong")
 
+def getnextverb(input_str):
+    error={}
+    verbs=all_vocab[3]
+    verb_keys=list(verbs.keys())
+    print(verb_keys)
+    keyx=input("What do you want to practice: ")
+    if(keyx in verb_keys):
+        l=verbs[keyx]
+        for x in l:
+            t=list(x.keys())[0]
+            comp=input("{}-->  ".format(t))
+            if(comp==x[t][0]):
+                print("correct")
+            else:
+                print("wrong, correct answer is \033[92m {}-->{} \033[00m".format(t,x[t][0]))
+                error[t]=x[t][0]
+        while(len(list(error.keys()))!=0):
+            temp=choice(list(error.keys()))
+            comp=input("{}-->  ".format(temp))
+            if(comp==error[temp]):
+                print("correct")
+                error.pop(temp)
+            else:
+                print("wrong")
 
 
 def getsearch(input_str):
