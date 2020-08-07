@@ -1,4 +1,4 @@
-from vocab import *
+from data.vocab import *
 import sys
 from fuzzywuzzy import process
 from random import choice
@@ -21,6 +21,7 @@ def take_input():
         input_str=input()
         if(input_str.startswith("..")):
             gs=take_control(input_str,gs)
+            print(gs)
             if(gs==0 or gs==1):
                 continue         
         output=get_output(input_str,gs)
@@ -167,7 +168,7 @@ def getsearch(input_str):
             if(len(x)>=2):
                 all_strx.append(x[0])
                 all_strx.append(x[1])
-    matched=process.extract(input_str, all_strx, limit=2)
+    matched=process.extract(input_str, all_strx, limit=3)
     ret=[]
     for x in all_str:
         temp_l=[]

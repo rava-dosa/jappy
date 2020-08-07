@@ -22,7 +22,11 @@ dependencies:
   - xz=5.2.5=h7b6447c_0
   - zlib=1.2.11=h7b6447c_3
   - pip:
+    - dill==0.3.2
     - fuzzywuzzy==0.18.0
+    - klepto==0.1.9
+    - pox==0.2.8
+    - pykakasi==2.0.1
     - python-levenshtein==0.12.0
 prefix: /home/user/miniconda/envs/jappy
 
