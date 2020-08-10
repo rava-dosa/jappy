@@ -43,8 +43,12 @@ things=[
 places=[
     ("otera","temple"),("kouen","park"),("suupaa","supermarket"),("depaato","department store"),
     ("basutei","bus stop"),("byouin","hospital"),("hoteru","hotel"),("honya","bookstore"),
-    ("mochi","town/city"),("resutoran","restaurent"),("kissaten","cafe"),("ginkoo","bank"),("toire","toilet"),
-    ("toshokan","library"),("yuubinkyoku","post office"),("ie","home"),("uchi","my home"),("gakkou","school")
+    ("machi","town/city"),("resutoran","restaurent"),("kissaten","cafe"),("ginkoo","bank"),("toire","toilet"),
+    ("toshokan","library"),("yuubinkyoku","post office"),("ie","home"),("uchi","my home"),("gakkou","school"),
+    ("mise","shop / store"),("yaoya","vegetable shop"),("doubutsuen","zoo"),("taishikan","embassy"),("keisatsu","police"),
+    ("kouban","police station"),("tatemono","building"),("michi","road"),("kado","edge"),("kousaten","intersection"),
+    ("shingou","signal"),("iriguchi","entrance"),("deguchi","exit"),("shi","city"),("ike","pond"),("niwa","garden"),
+    ("daidokoro","kitchen"),("kaidan","stairs")
 ]
 fun=[
     ("eiga","movie"),("ongaku","music"),("jasshi","magazine"),("supaatsu","sports"),
@@ -87,7 +91,7 @@ general4=[
     ("oniisan","elder brother"),("otokonohito","man"),("otouto","younger brother"),("ojiisan","grandfather"),("imouto","younger sister"),("uta","song"),
     ("ane","elder sister"),
     ("iiko","good child"),("iru","color"),("obentou","lunch box"),("kabuki","traditiona art"),("kyonen","last year"),("kusuri","medicine"),
-    ("kusuri o nomu"),("kondo","near future"),("sakubun","essay / composition"),("shiken","exam"),("sengetsu","last month"),
+    ("kusuri o nomu","drink medicine"),("kondo","near future"),("sakubun","essay / composition"),("shiken","exam"),("sengetsu","last month"),
     ("tango","vocabulary / word"),("byouki","illness"),
     ("kokuban","blackboard"),("kongetsu","this month"),("tenkiyobou","weather forecast"),("tokoro","place"),("nanika","something"),
     ("hashi","chopsticks"),("maishuu","every week"),("raigetsu","next month")
@@ -101,7 +105,7 @@ general5=[
     ("okashi","sweets"),("oshougatsu","new year's"),("otokonoko","boy"),("omatsuri","festival"),("omocha","toy"),("onsen","spa ; hot spring"),
     ("onnako","girl"),("gaikoku","foreign country"),("kashu","singer"),("kawa","river"),("kochira","this person"),("kongakki","this semester"),
     ("shachou","ceo/president of company"),("jugyou","class"),("shourai","future"),("jinja","shrine"),("tsuri","fishing"),
-    ("bijuutsukan","art musuem"),("mizuumi","lake"),("yama", "mountain"),("yume","dream"),
+    ("bijuutsukan","art musuem"),("mizuumi","lake"),("yama", "mountain"),("yume","dream"),("sora","sky"),
     ("imi","meaning"),("otearai","restroom"),("kaje","cold"),("kanojo","girlfriend/she"),("kare","boyfriend/he"),
     ("kion","temperature"),("shiai","match"),("seiseki","grade"),("seki","cough"),("hana","flower"),("fuku","clothes"),
     ("futsukayoi","hangover"),("mono","thing"),("youji","business to take care of")
@@ -267,7 +271,7 @@ verbs = {
 noun={
     "activities":activities,"peopleThings":peopleThings,"general1":general1,"countries":countries,"majors":majors,
     "occupations":occupations,"family":family,"things":things,"places":places,"fun":fun,"food1":food1,"food2":food2,
-    "time":time,"location":location,"general2":general2,"general3":general3,"etc":etc,"bodyparts":bodyparts, "season":season, "general5":general5
+    "time":time,"location":location,"general2":general2,"general3":general3,"etc":etc,"bodyparts":bodyparts, "season":season, "general5":general5, "general4":general4
     }
 adjective={
     "adji":adji,"adjna":adjna
