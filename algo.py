@@ -2,6 +2,9 @@ from data.vocab import *
 import sys
 from fuzzywuzzy import process
 from random import choice
+import json
+from data.genkikanji import l5
+from kanji import getromanji
 #gs=1, search words
 #gs=2, practice nouns
 #gs=3, practice verbs
@@ -12,6 +15,17 @@ control={
     "..r":[0,"reset"],"..s":[1,"search"],"..pw":[2,"practice words"],"..pv":[3,"practice verbs"],"..pk":[4,"practice kanji"],"..padj":[5,"practice adjective"],
     "..padv":[6,"practice adverb"]
     }
+
+def get_kanji_data():
+    l=[]
+    ret={}
+    for x in range(1,7):
+        temp=json.loads(open("data/kanji{}.json".format(x)).read())
+        l=l+temp
+    for t in l:
+        ret[t['kanji']]=t
+    return ret
+
 def take_input():
     gs=0
     while(1):
@@ -51,6 +65,9 @@ def get_output(input_str,gs):
     elif(gs==3):
         output=getnextverb(input_str)
         return({"gs":3,"output":output})
+    elif(gs==4):
+        output=getnextkanji(input_str)
+        return({"gs":4,"output":output})
     else:
         return({"gs":0,"output":"Please enter valid command"})
 
@@ -129,6 +146,24 @@ def getnextverb(input_str):
                 print("wrong")
 
 
+def getnextkanji(input_str):
+    print([*l5.keys()])
+    allx=get_kanji_data()
+    chapter=input()
+    for temp in l5[chapter]:
+        print("What is this Kanji: {}".format(temp))
+        kanji=allx[temp]
+        meta=kanji["meta"]
+        input()
+        print("Meaning - {}".format(meta["meaning"]))
+        print("kun wa - {}, on wa - {}".format(meta["kun"],meta["on"]))
+        words=kanji["words"]
+        for temp1 in words:
+            print(temp1[0])
+            input()
+            print("\033[92m{}\033[00m,\33[33m{}\033[00m".format(getromanji(temp1[1]),temp1[2]))
+            print("\n\n")
+
 def getsearch(input_str):
     all_str=[]
     noun=all_vocab[0]
@@ -169,7 +204,7 @@ def getsearch(input_str):
                 all_strx.append(x[0])
                 all_strx.append(x[1])
     matched=process.extract(input_str, all_strx, limit=3)
-    ret=[]
+    ret=set()
     for x in all_str:
         temp_l=[]
         for y in matched:
@@ -177,7 +212,7 @@ def getsearch(input_str):
         for z in temp_l:
             if(len(x)>=2):
                 if(x[0]==z or x[1]==z):
-                    ret.append(x)
+                    ret.add(x)
     # ret=ret[::-1]
     return ret
 if __name__ == "__main__": 

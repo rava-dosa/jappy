@@ -23,7 +23,7 @@ countries=[
 ]
 majors=[
     ("kagaku","science"),("ajia kenkyuu","Asian Studies"),("keezai","economics"),("kokusaikankee","international relations"),
-    ("jinruigaku","anthropology"),("seeji","politics"),("bijinesu","business"),("bungaku","literature"),
+    ("jinruigaku","anthropology"),("seiji","politics"),("bijinesu","business"),("bungaku","literature"),
     ("rekishi","history")
 ]
 occupations=[
@@ -78,22 +78,54 @@ general3=[
 bodyparts=[
     ("karada","body"),("atama","head"),("kami","hair"),("kao","face"),("hitai","forehead"),("me","eye"),("mayu","eyebrow"),("mabuta","eyelid"),("matusge","eyelash"),("hana","nose"),("mimi","ear"),("kuchi","mouth"),
     ("kuchibiru","lip"),("ha","teeth"),("shita","tongue"),("nodo","thorat"),("ago","jaw"),("kubi","neck"),("kata","shoulder"),("ude","arm"),("hiji","elbow"),("te","hand"),("yubi","finger"),("tsume","nail"),
-    ("mune","chest"),("senaka","back"),("onaka","stomach"),("hiza","knee"),("ashikubi","ankle"),("kakato","heel"),("tsumasaki","toe")
+    ("mune","chest"),("senaka","back"),("onaka","stomach"),("hiza","knee"),("ashikubi","ankle"),("kakato","heel"),("tsumasaki","toe"),("ashi","leg")
+    ]
+
+general4=[
+    ("megane","glasses"),("me","eye"),("haha","my mother"),("chichi","my father"),("shokudou","cafeteria / dining hall"),("kuruma","car"),
+    ("kuni","country"),("kuchi","mouth"),("kazoku","family"),("onnanohito","woman"),("obaasan","grandmother"),("oneesan","older sister"),
+    ("oniisan","elder brother"),("otokonohito","man"),("otouto","younger brother"),("ojiisan","grandfather"),("imouto","younger sister"),("uta","song"),
+    ("ane","elder sister"),
+    ("iiko","good child"),("iru","color"),("obentou","lunch box"),("kabuki","traditiona art"),("kyonen","last year"),("kusuri","medicine"),
+    ("kusuri o nomu"),("kondo","near future"),("sakubun","essay / composition"),("shiken","exam"),("sengetsu","last month"),
+    ("tango","vocabulary / word"),("byouki","illness"),
+    ("kokuban","blackboard"),("kongetsu","this month"),("tenkiyobou","weather forecast"),("tokoro","place"),("nanika","something"),
+    ("hashi","chopsticks"),("maishuu","every week"),("raigetsu","next month")
+]
+
+general5=[
+    ("eki","station"),("okanemochi","rich person"),("kisetsu","season"),("gyuuniyuu","milk"),("kotoshi","this year"),("shinkansen","bullet train"),
+    ("seikatsu","life / living"),("sekai","world"),("chikatetsu","subway"),("tebukura","gloves"),("tempura","tempura"),
+    ("tokoya","barber shop"),("biyouin","beauty parlor"),("bin","flight"),("fune","ship / boat"),("yakyuu","baseball"),
+    ("yuumejin","celebrity"),("yoyaku","reservation"),("raigakki","next semester"),("ringo","apple"),
+    ("okashi","sweets"),("oshougatsu","new year's"),("otokonoko","boy"),("omatsuri","festival"),("omocha","toy"),("onsen","spa ; hot spring"),
+    ("onnako","girl"),("gaikoku","foreign country"),("kashu","singer"),("kawa","river"),("kochira","this person"),("kongakki","this semester"),
+    ("shachou","ceo/president of company"),("jugyou","class"),("shourai","future"),("jinja","shrine"),("tsuri","fishing"),
+    ("bijuutsukan","art musuem"),("mizuumi","lake"),("yama", "mountain"),("yume","dream"),
+    ("imi","meaning"),("otearai","restroom"),("kaje","cold"),("kanojo","girlfriend/she"),("kare","boyfriend/he"),
+    ("kion","temperature"),("shiai","match"),("seiseki","grade"),("seki","cough"),("hana","flower"),("fuku","clothes"),
+    ("futsukayoi","hangover"),("mono","thing"),("youji","business to take care of")
     ]
 season=[
-    ("shiki","four season"),("hairu","spring"),("natsu","summer"),("aki","autumn"),("fuyu","winter"),("tenki","weather"),("hare","sunny"),("kumo","cloud"),("kumori","cloudy"),("rain","ame"),("taifuu","typhoon"),
+    ("shiki","four season"),("hairu","spring"),("natsu","summer"),("aki","fall / autumn"),("fuyu","winter"),("tenki","weather"),("hare","sunny"),("kumo","cloud"),("kumori","cloudy"),("rain","ame"),("taifuu","typhoon"),
     ("kiri","fog"),("yuki","snow"),("ondo","temperature"),("shitsudo","humidity"),("atsui","hot"),("atatakai","warm"),("samui","cold"),("sujushi","cold"),("kuuki","air")
 ]
 
 adji=[
     ("ii","good"),("hayai","early"),("oishii","delicious"),("atarashii","new"),("atsui","hot"),("isogashii","busy"),("ookii","large"),
     ("omashiroi","interesting/funny"),("kakkoii","good-looking"),("kowai","frightening"),("samui","cold"),("tanoshii","fun"),
-    ("chisai","small"),("tsumaranai","boring"),("furui","old"),("mujukashii","difficult"),("yasashi","easy/kind"),("yasui","cheap")
+    ("chisai","small"),("tsumaranai","boring"),("furui","old"),("mujukashii","difficult"),("yasashi","easy/kind"),("yasui","cheap"),
+    ("aoi","blue"),("akai","red"),("kurui","black"),("sabishii","lonely"),("shiroi","white"),("wakai","young"),
+    ("atamagaii","bright"),("kawaii","cute"),("segatakaii","tall"),("segahikui","short"),("nagai","long"),("hayai","fast"),("mijikai","short"),
+    ("amai","sweet"),("itai","hurt"),("ooi","there are many"),("semai","narrow"),("tsugougawarui","inconvenient / to have a schedule conflict"),
+    ("warui","bad"),("atatakai","warm"),("osoi","slow;late"),("sujushii","cool (weather)"),("tsumetai","cold (things/people)"),
+    ("nemui","sleepy")
 ]
 adjna=[
     ("kirai","dislike/disgust"),("kirei","beautiful"),("genki","healthy"),("shijuka","quiet"),("suki","fond/like"),
     ("daikirai","very hate"),("daisuki","very fond/very love"),("nigiyaka","lively"),("hima","not busy"),("taihen","tough"),
-    ("yuumei","famous")
+    ("yuumei","famous"),("suteki","nice"),("kantan","easy"),("ijiwaru","mean spirited"),("jouzu","good at"),("heta","poor at"),
+    ("shinsetsu","kind"),("benri","convenient")
 ]
 negativeAdv=[
     ("amari","not much"),("jenjen","not at all")
@@ -186,7 +218,7 @@ verbs4=[
     {"to get tired":["tsukareru","ru"]},
     {"to quit":["yameru","ru"]},
     {"to fight":["kenkasuru","ire"]},
-    {"to intorduce":["joukaisuru","ire"]},
+    {"to introduce":["shoukaisuru","ire"]},
     {"to go on diet":["dietosuru","ire"]},
     {"to be late":["chikokusuru","ire"]},
     {"to study abroad":["ryuugakusuru","ire"]},
@@ -194,12 +226,14 @@ verbs4=[
     {"to catch cold":["kajeohiku","u"]},
     {"to be interested":["kyoumigaaru","u"]},
     {"to loose":["nakusu","u"]},
-    {"to have a fever":["natsugaaru","u"]},
+    {"to have a fever":["netsugaaru","u"]},
     {"to become thirsty":["nodogakawaku","u"]},
     {"to cough":["sekigaderu","ru"]},
-    {"to break up; to seperate":["wakareru","ru"]},
+    {"to break up, to seperate":["wakareru","ru"]},
     {"to get nervous":["kinchousuru","ire"]},
-    {"to worry":["jinbaisuru","ire"]}
+    {"to worry":["shinpaisuru","ire"]},
+    {"to turn":["magaru","ru"]},
+    {"to cross":["wataru","ru"]}
 ]
 
 etc=[
@@ -207,8 +241,24 @@ etc=[
     ("takusan","a lot"),("demo","but"),("goro","around"),("gurai","approximate"),("hitoride","alone"),
     ("isshoni","together"),("sugoku","extremely"),("sorekara","and then"),("daijoubu","it's okay"),
     ("totemo","very"),("donna","what kind of"),("atode","later on"),("osoku","do something late"),("kara","because"),
-    ("kekkoudesu","that's not necessary"),("sugu","right away"),("hontoudesuka","Really?"),("yukkuri","slowly"),("kyoudai","brother"),
-    ("kesa","this morning"),("kazoku","family")
+    ("kekkoudesu","that's not necessary"),("sugu","right away"),("hontoudesuka","Really?"),("yukkuri","slowly"),("kyoudai","siblings"),
+    ("kesa","this morning"),("kazoku","family"),
+    ("yokattara","if you like"),("mochiron","of course"),("moshimoshi","hello"),("betsuni (negative)","nothing in particular"),("nanimo (negative)","not anything"),
+
+    ("kara","from"),("sehi","by all means"),("tokorode","by the way"),("minna","all"),("mou","already"),("itsumo","always"),
+    ("uum","no"),("um","yes"),("kanpai","cheers"),("zannen","that's too bad"),("nitsuite","about / concerning"),("mada","not yet"),
+    ("minnade","all of people together"),
+
+    ("aruite","on foot"),("ichiban","best"),("ka","or"),("kagetsu","for ... months"),("go","in ...time; after..."),("konogoru","these days"),
+    ("shuukan","for weeks"),("de","by ; with"),("douyatte","how; by what means"),("dochira / docchi","which"),("donogurai","how much ; how long"),
+    ("nen","years"),("hayaku","early ; fast"),
+
+    ("ato","after an event"),("shusshin","coming from"),("soshite","and then"),("dake","just ; only"),("ten","points"),("hisashiburi","it has been long time"),
+    ("maamaa","okay ; so-so"),("motto","more"),
+
+    ("odaijini","get well soon"),("genkiganai","don't look well"),("tabun","probably / maybe"),("dekirudake","as much as possible"),
+    ("deshou","probably; ... right"),("do","temperature"),("nisannichi","for two to three days"),("node","because"),("hajimete","for the first time"),
+    ("mousugu","very soon; in a few moments")
     ]
 # pdb.set_trace()
 verbs = {
@@ -217,7 +267,7 @@ verbs = {
 noun={
     "activities":activities,"peopleThings":peopleThings,"general1":general1,"countries":countries,"majors":majors,
     "occupations":occupations,"family":family,"things":things,"places":places,"fun":fun,"food1":food1,"food2":food2,
-    "time":time,"location":location,"general2":general2,"general3":general3,"etc":etc
+    "time":time,"location":location,"general2":general2,"general3":general3,"etc":etc,"bodyparts":bodyparts, "season":season, "general5":general5
     }
 adjective={
     "adji":adji,"adjna":adjna
