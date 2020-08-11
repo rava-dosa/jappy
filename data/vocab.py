@@ -145,7 +145,7 @@ verbs1=[
     {"see/watch":["miru","ru"]},{"come":["kuru","ire"]},{"do":["suru","ire"]},
     {"study":["benkyosuru","ire"]},
 
-    {"meet":["au","u"]},{"there is":["aru","u"]},{"buy":["kau","u"]},
+    {"meet":["au","u"]},{"there is":["aru","u"]},{"buy":["kau","u"]},{"sell":["uru","u"]},
     {"write":["kaku","u"]},{"wait":["matsu","u"]},{"to take a pic":["yoru","u"]},
     {"understand":["wakaru","u"]},{"is in/stays at":["iru","ru"]}
     ]
@@ -203,6 +203,7 @@ verbs3=[
     {"to do physical exercise":["undosuru","ire"]},
     {"to take a walk":["sanposuru","ire"]}
 ]
+
 verbs4=[
     {"to take (time/money)":["kakaru","u"]},
     {"to stay":["tomaru","u"]},
@@ -262,7 +263,9 @@ etc=[
 
     ("odaijini","get well soon"),("genkiganai","don't look well"),("tabun","probably / maybe"),("dekirudake","as much as possible"),
     ("deshou","probably; ... right"),("do","temperature"),("nisannichi","for two to three days"),("node","because"),("hajimete","for the first time"),
-    ("mousugu","very soon; in a few moments")
+    ("mousugu","very soon; in a few moments"),
+
+    ("sukoshi","small quantity")
     ]
 # pdb.set_trace()
 verbs = {
