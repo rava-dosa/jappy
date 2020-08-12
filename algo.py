@@ -5,6 +5,7 @@ from random import choice
 import json
 from data.genkikanji import l5
 from kanji import getromanji
+import re
 #gs=1, search words
 #gs=2, practice nouns
 #gs=3, practice verbs
@@ -12,9 +13,12 @@ from kanji import getromanji
 #gs=5, practice adjective
 #gs=6, practice adverbs
 control={
-    "..r":[0,"reset"],"..s":[1,"search"],"..pw":[2,"practice words"],"..pv":[3,"practice verbs"],"..pk":[4,"practice kanji"],"..padj":[5,"practice adjective"],
+    "..r":[0,"reset"],"..s":[1,"search"],"..pw":[2,"practice words"],"..pv":[3,"practice verbs"],"..pk":[4,"practice genki kanji"],"..pke":[7,"practice genki kanji extended"],"..padj":[5,"practice adjective"],
     "..padv":[6,"practice adverb"]
     }
+
+def green(str1):
+    return "\033[92m{}\033[00m".format(str1)
 
 def get_kanji_data():
     l=[]
@@ -25,6 +29,32 @@ def get_kanji_data():
     for t in l:
         ret[t['kanji']]=t
     return ret
+
+def get_kanji_mnemonics():
+    ret=json.loads(open("data/mnemonics.json").read())
+    return ret
+
+def get_kanji_similar():
+    ret=json.loads(open("data/simk.json").read())
+    return ret
+
+def get_genki_kanji():
+    ret=json.loads(open("data/gk.json").read())
+    return ret
+
+def printMnemo(kanji,mnemo):
+    try:
+        print("To remember : {}".format(green(mnemo[kanji])))
+    except:
+        print("Mnemonics not found")
+
+def printSimilar(kanji,simk):
+    try:
+        temp=simk[kanji]
+        print("Similar kanji are as follow: ")
+        print(temp)
+    except:
+        print("Similar kanji not found")
 
 def take_input():
     gs=0
@@ -68,6 +98,9 @@ def get_output(input_str,gs):
     elif(gs==4):
         output=getnextkanji(input_str)
         return({"gs":4,"output":output})
+    elif(gs==7):
+        output=getnextkanjiextended(input_str)
+        return({"gs":7,"output":output})
     else:
         return({"gs":0,"output":"Please enter valid command"})
 
@@ -84,7 +117,7 @@ def getnextword(input_str):
             if(comp==x[0]):
                 print("correct")
             else:
-                print("wrong, correct answer is \033[00m {}-->{} \033[00m".format(x[1],x[0]))
+                print("wrong, correct answer is \033[92m {}-->{} \033[00m".format(x[1],x[0]))
                 error[x[1]]=x[0]
         while(len(list(error.keys()))!=0):
             temp=choice(list(error.keys()))
@@ -149,20 +182,61 @@ def getnextverb(input_str):
 def getnextkanji(input_str):
     print([*l5.keys()])
     allx=get_kanji_data()
+    mnemo=get_kanji_mnemonics()
+    simk=get_kanji_similar()
+    gk=get_genki_kanji()
     chapter=input()
     for temp in l5[chapter]:
         print("What is this Kanji: {}".format(temp))
-        kanji=allx[temp]
-        meta=kanji["meta"]
-        input()
-        print("Meaning - {}".format(meta["meaning"]))
-        print("kun wa - {}, on wa - {}".format(meta["kun"],meta["on"]))
-        words=kanji["words"]
-        for temp1 in words:
-            print(temp1[0])
+        try:
+            kanji=allx[temp]
+            meta=gk[temp]
             input()
-            print("\033[92m{}\033[00m,\33[33m{}\033[00m".format(getromanji(temp1[1]),temp1[2]))
-            print("\n\n")
+            print("Meaning - {}".format(meta[1]))
+            print("\nkun, on wa - {}\n".format(meta[0]))
+        except:
+            quit()
+        printMnemo(temp,mnemo)
+        printSimilar(temp,simk)
+        # words=kanji["words"]
+        # for temp1 in words:
+        #     print(temp1[0])
+        #     input()
+        #     print("\033[92m{}\033[00m,\33[33m{}\033[00m".format(getromanji(temp1[1]),temp1[2]))
+        #     print("\n\n")
+def getnextkanjiextended(input_str):
+    print([*l5.keys()])
+    allx=get_kanji_data()
+    mnemo=get_kanji_mnemonics()
+    gk=get_genki_kanji()
+    chapter=input()
+    for temp in l5[chapter]:
+        print("What is this Kanji: {}".format(temp))
+        meta=gk[temp]
+        try:
+            input()
+            print("Meaning - {}".format(meta[1]))
+            print("\nkun, on wa - {}\n".format(meta[0]))
+        except:
+            print("",end="")
+        try:
+            print("\nTo remember : {}\n".format(green(mnemo[temp])))
+        except:
+            print("",end="")
+        
+        for x3 in range(0,len(meta[2])):
+            if(x3==0):
+                print("Press . to go next kanji")
+            temp3=input()
+            # import pdb;pdb.set_trace()
+            if(temp3=='.'):
+                break
+            # try:
+            t4=meta[2][x3]
+            print("{} , {} , {}".format(t4["Example"],t4["Reading"],t4["Definition"]))
+            # except:
+            #     print("",end="")
+                
 
 def getsearch(input_str):
     all_str=[]

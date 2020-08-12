@@ -1,4 +1,5 @@
-![usage gif](https://media2.giphy.com/media/cmOHOX0Ax8URRsXNp9/giphy.gif)
+![words gif](https://media0.giphy.com/media/ZDEhXYt9g9LabaTBWv/giphy.gif)
+![kanji.gif](https://media2.giphy.com/media/MZuL4FAzbQkoGCRoJ1/giphy.gif)
 
 1. conda env create -f environment.yml
 2. source activate jappy

@@ -81,7 +81,7 @@ general3=[
 ]
 bodyparts=[
     ("karada","body"),("atama","head"),("kami","hair"),("kao","face"),("hitai","forehead"),("me","eye"),("mayu","eyebrow"),("mabuta","eyelid"),("matusge","eyelash"),("hana","nose"),("mimi","ear"),("kuchi","mouth"),
-    ("kuchibiru","lip"),("ha","teeth"),("shita","tongue"),("nodo","thorat"),("ago","jaw"),("kubi","neck"),("kata","shoulder"),("ude","arm"),("hiji","elbow"),("te","hand"),("yubi","finger"),("tsume","nail"),
+    ("kuchibiru","lip"),("ha","teeth"),("shita","tongue"),("nodo","throat"),("ago","jaw"),("kubi","neck"),("kata","shoulder"),("ude","arm"),("hiji","elbow"),("te","hand"),("yubi","finger"),("tsume","nail"),
     ("mune","chest"),("senaka","back"),("onaka","stomach"),("hiza","knee"),("ashikubi","ankle"),("kakato","heel"),("tsumasaki","toe"),("ashi","leg")
     ]
 
@@ -238,7 +238,8 @@ verbs4=[
     {"to get nervous":["kinchousuru","ire"]},
     {"to worry":["shinpaisuru","ire"]},
     {"to turn":["magaru","ru"]},
-    {"to cross":["wataru","ru"]}
+    {"to cross":["wataru","ru"]},
+    {"to sell":["uru","ru"]}
 ]
 
 etc=[
