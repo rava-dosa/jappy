@@ -7,10 +7,12 @@ python algo.py
 
 ## For practicing kanji in order of most frequent to least frequent
 
-![kanji.gif](https://media2.giphy.com/media/MZuL4FAzbQkoGCRoJ1/giphy.gif)
 ```
 python kanji.py
 ```
+
+![kanji.gif](https://media2.giphy.com/media/MZuL4FAzbQkoGCRoJ1/giphy.gif)
+
 
 ## Setup Environment
 1. conda env create -f environment.yml
