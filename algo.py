@@ -20,6 +20,8 @@ control={
 def green(str1):
     return "\033[92m{}\033[00m".format(str1)
 
+def yellow(str1):
+    return "\033[93m{}\033[00m".format(str1)
 def get_kanji_data():
     l=[]
     ret={}
@@ -187,7 +189,7 @@ def getnextkanji(input_str):
     gk=get_genki_kanji()
     chapter=input()
     for temp in l5[chapter]:
-        print("What is this Kanji: {}".format(temp))
+        print("What is this Kanji: {}".format(yellow(temp)))
         try:
             kanji=allx[temp]
             meta=gk[temp]
@@ -211,7 +213,7 @@ def getnextkanjiextended(input_str):
     gk=get_genki_kanji()
     chapter=input()
     for temp in l5[chapter]:
-        print("What is this Kanji: {}".format(temp))
+        print("What is this Kanji: {}".format(yellow(temp)))
         meta=gk[temp]
         try:
             input()
